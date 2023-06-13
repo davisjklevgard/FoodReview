@@ -1,4 +1,4 @@
-package com.foodreview.foodreview.model;
+package com.foodreview.foodreview.models;
 
 import java.io.Serializable;
 

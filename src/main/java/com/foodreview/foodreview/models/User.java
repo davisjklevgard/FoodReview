@@ -1,11 +1,11 @@
-package com.foodreview.foodreview.model;
+package com.foodreview.foodreview.models;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 
 @Entity
-public class Users implements Serializable {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,9 @@ public class Users implements Serializable {
     private String image;
     // private arrays for favorite cities and restaurants
 
-    public Users() {}
+    public User() {}
 
-    public Users(String name, String username, String email, String image) {
+    public User(String name, String username, String email, String image) {
         this.name = name;
         this.username = username;
         this.email = email;
