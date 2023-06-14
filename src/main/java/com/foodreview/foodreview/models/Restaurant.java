@@ -1,26 +1,33 @@
 package com.foodreview.foodreview.models;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
+@Entity
 public class Restaurant implements Serializable {
-    //Variables
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
+    // Variables
     private Long id;
     private String name;
     private String foodType;
     private String address;
     private String phone;
-    private Array dish;
+    //private Array dish;
 
     public Restaurant() {
     }
 
-    public Restaurant(String name, String foodType, String address, String phone, Array dish) {
+    public Restaurant(String name, String foodType, String address, String phone) {
         this.name = name;
         this.foodType = foodType;
         this.address = address;
         this.phone = phone;
-        this.dish = dish;
     }
 
     public Long getId() {
@@ -63,11 +70,11 @@ public class Restaurant implements Serializable {
         this.phone = phone;
     }
 
-    public Array getDish() {
-        return dish;
-    }
-
-    public void setDish(Array dish) {
-        this.dish = dish;
-    }
+//    public Array getDish() {
+//        return dish;
+//    }
+//
+//    public void setDish(Array dish) {
+//        this.dish = dish;
+//    }
 }

@@ -1,24 +1,31 @@
 package com.foodreview.foodreview.models;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.sql.Array;
 
+@Entity
 public class City implements Serializable {
-    //Variables
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
+    // Variables
     private Long id;
     private String name;
     private String county;
     private String state;
-    private Array restaurants;
+    //private Array restaurants;
 
     public City() {
     }
 
-    public City(String name, String county, String state, Array restaurants) {
+    public City(String name, String county, String state) {
         this.name = name;
         this.county = county;
         this.state = state;
-        this.restaurants = restaurants;
+        //this.restaurants = restaurants;
     }
 
     public Long getId() {
@@ -53,11 +60,11 @@ public class City implements Serializable {
         this.state = state;
     }
 
-    public Array getRestaurants() {
-        return restaurants;
-    }
-
-    public void setRestaurants(Array restaurants) {
-        this.restaurants = restaurants;
-    }
+//    public Array getRestaurants() {
+//        return restaurants;
+//    }
+//
+//    public void setRestaurants(Array restaurants) {
+//        this.restaurants = restaurants;
+//    }
 }

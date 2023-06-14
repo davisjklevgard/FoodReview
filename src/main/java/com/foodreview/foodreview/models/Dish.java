@@ -1,9 +1,16 @@
 package com.foodreview.foodreview.models;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 
+@Entity
 public class Dish implements Serializable {
-    //Variables
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
+    // Variables
     private Long id;
     private String name;
     private String restaurant;
