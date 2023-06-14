@@ -27,5 +27,11 @@ public class RestaurantService {
                 .orElseThrow(() -> new UserNotFoundException("User not found with ID: " + id));
     }
 
+    public Restaurant getRestaurantByName(String name) {
+        // Add any necessary business logic for retrieving a user by ID
+        return restaurantRepository.findByName(name)
+                .orElseThrow(() -> new UserNotFoundException("User not found with Name: " + name));
+    }
+
     // Add other CRUD operations and business logic as needed
 }
